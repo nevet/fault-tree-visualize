@@ -1,0 +1,22 @@
+{
+	"fault1": {
+		"fault1.1": {
+			"fault1.1.1": "description to fault 1.1.1",
+			"fault1.1.2": "description to fault 1.1.2",
+		},
+		"fault1.2": {
+			"fault1.2.1": "description to fault 1.2.1",
+			"fault1.2.2": "description to fault 1.2.2",
+		},
+	},
+	"fault2": {
+		"fault2.1": {
+			"fault2.1.1": "description to fault 2.1.1",
+			"fault2.1.2": "description to fault 2.1.2",
+		},
+		"fault2.2": {
+			"fault2.2.1": "description to fault 2.2.1",
+			"fault2.2.2": "description to fault 2.2.2",
+		},
+	},
+}
