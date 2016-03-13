@@ -4,16 +4,15 @@
   view.navName = "item_nav"
 
   var body = $("body")
-  var canvas = $("#canvas")
-  var itemNav = $("#canvas ."+view.navName)
 
   view.updateTree = function(data, needNav) {
-    removeOld();
+    var frontCanvas = $(".front_buffer .canvas");
+    var backCanvas = $(".back_buffer .canvas");
 
+    var itemNav = $(backCanvas.children(".item_nav"));
+    itemNav.removeClass("clickable");
     if (needNav) {
       itemNav.addClass("clickable");
-    } else {
-      itemNav.removeClass("clickable");
     }
 
     $.each(data, function(i, val) {
@@ -28,11 +27,24 @@
       }
 
       node.html(content);
-      node.appendTo(canvas);
+      node.appendTo(backCanvas);
     });
+
+    addNew(backCanvas);
+    removeOld(frontCanvas);
   }
 
-  function removeOld() {
-    $("#canvas li").remove("."+view.nodeName + ",." + view.leafName)
+  function addNew(canvas) {
+    canvas.parent("div").removeClass("back_buffer");
+    canvas.parent("div").addClass("front_buffer");
+  }
+
+  function clearBuffer(canvas) {
+    canvas.remove("."+view.nodeName + ",." + view.leafName);
+  }
+
+  function removeOld(canvas) {
+    canvas.parent("div").removeClass("front_buffer")
+    canvas.parent("div").addClass("back_buffer")
   }
 } (window.view = window.view || {}, jQuery));

@@ -15,7 +15,8 @@
       "fault1.2.2": {
         "desp": "description to fault 1.2.2"
       }
-    }
+    },
+    "desp": "fault1.3"
   },
   "fault2": {
     "fault2.1": {
