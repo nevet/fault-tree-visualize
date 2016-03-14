@@ -37,7 +37,6 @@ li.clickable:hover {
 	-webkit-animation: fadeOut 1s ease-in;
 }
 
-
 @-webkit-keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}

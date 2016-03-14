@@ -3,6 +3,8 @@
   view.leafName = "fault_leaf"
   view.navName = "item_nav"
 
+  view.debug
+
   var body = $("body")
 
   view.updateTree = function(data, needNav) {
@@ -40,10 +42,11 @@
   }
 
   function clearBuffer(canvas) {
-    canvas.remove("."+view.nodeName + ",." + view.leafName);
+    canvas.children("li").remove("."+view.nodeName + ",." + view.leafName);
   }
 
   function removeOld(canvas) {
+    clearBuffer(canvas);
     canvas.parent("div").removeClass("front_buffer")
     canvas.parent("div").addClass("back_buffer")
   }

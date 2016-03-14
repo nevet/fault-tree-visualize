@@ -55,8 +55,11 @@
   });
 
   $("ul").on("click", "li."+view.navName, function(event) {
-    stack.pop()
-    view.updateTree(getNextLayer(stack.pop()), stack.length >= 1);
+    if (stack.length) {
+      stack.pop()
+      view.updateTree(getNextLayer(stack.pop()), stack.length >= 1);
+    }
+    
     event.preventDefault();
   });
 } (window.controller = window.controller || {}, jQuery));
