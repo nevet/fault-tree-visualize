@@ -48,18 +48,18 @@
   });
 
   $("ul").on("click", "li."+view.nodeName, function(event) {
+    event.preventDefault();
+
     clicked = $(event.target).html();
     view.updateTree(getNextLayer(clicked), true);
-
-    event.preventDefault();
   });
 
   $("ul").on("click", "li."+view.navName, function(event) {
+    event.preventDefault();
+
     if (stack.length) {
       stack.pop()
       view.updateTree(getNextLayer(stack.pop()), stack.length >= 1);
     }
-    
-    event.preventDefault();
   });
 } (window.controller = window.controller || {}, jQuery));

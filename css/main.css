@@ -16,11 +16,17 @@ li.clickable {
 	text-decoration: underline;
 }
 
+/*
 li.clickable:hover {
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
+}
+*/
+
+ul.canvas {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .front_buffer {
