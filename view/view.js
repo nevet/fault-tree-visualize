@@ -47,6 +47,8 @@
 
   function removeOld(canvas) {
     clearBuffer(canvas);
+
+    canvas.parent("div").removeClass("first_time")
     canvas.parent("div").removeClass("front_buffer")
     canvas.parent("div").addClass("back_buffer")
   }
